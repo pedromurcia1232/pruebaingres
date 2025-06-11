@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inicio de Sesión</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #d4d9c3, #f1f3ee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2e2e2e;
+    }
+
+    .content {
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #3e4e3c;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin: 5px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      width: 100%;
+      background-color: #f5f6f0;
+      border: 2px solid #a1b58d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 300px;
+      max-height: 500px;
+      height: 500px;
+    }
+
+    .info-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .form-container {
+      flex: 1;
+      min-width: 300px;
+      max-height: 500px;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #e9eddb;
+      overflow-y: auto;
+    }
+
+    .form-container h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 22px;
+      color: #2f4f2f;
+    }
+
+    .form-container label {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #3d563a;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #98a686;
+      background-color: #ffffff;
+      color: #2e2e2e;
+    }
+
+    .form-container button {
+      padding: 12px;
+      background-color: #6e8b4d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 10px;
+    }
+
+    .form-container button:hover {
+      background-color: #516d38;
+      transform: scale(1.03);
+    }
+
+    .logoisaco {
+      width: 200px;
+      height: auto;
+      margin: 0 auto 10px auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .card-body {
+        height: 200px;
+      }
+
+      .form-container {
+        max-height: none;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="card">
+      <!-- Imagen de presentación -->
+      <div class="card-body">
+        <img src="{{ url_for('static', filename='presentacion.jpeg') }}" alt="Logo BTC-INTELLIGENCE" class="info-image">
+      </div>
+
+      <!-- Sección del formulario -->
+      <div class="form-container">
+        <img src="{{ url_for('static', filename='logobtc.png') }}" alt="Logo ISACO" class="logoisaco">
+
+        <h2>Inicio de Sesión</h2>
+        <form method="post" action="/login">
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="manpack">Man Pack:</label>
+          <input type="text" id="manpack" name="manpack" required>
+
+          <button type="submit">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-section">
+      <ul>
+        <li>Ideado por: Raul Guerrero</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <ul>
+        <li>Desarrollado por:</li>
+        <li>Pedro P. Murcia - 3133732310</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
+
